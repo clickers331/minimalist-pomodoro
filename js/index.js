@@ -1,10 +1,9 @@
 
 class TimeMode {
-    constructor(_timeInSeconds ,_modalTitle, _modalDesc, _modalBtnTxt, _themeColor) {
+    constructor(_timeInSeconds ,_modalTitle, _modalDesc, _themeColor) {
         this.timeInSeconds = _timeInSeconds;
         this.modalTitle = _modalTitle;
         this.modalDesc = _modalDesc;
-        this.modalBtnTxt = _modalBtnTxt;
         this.themeColor = _themeColor;
     }
 
@@ -15,7 +14,6 @@ class TimeMode {
                     <p class="modal-desc">
                         ${this.modalDesc}
                     </p>
-                    <button class="modal-close" style = "color:${this.themeColor}">${this.modalBtnTxt}</button>
                 </div>
                 `
     }
@@ -42,9 +40,9 @@ const modalDesc = document.querySelector('.modal-desc')
 let timerEl = document.querySelector('.timer') //Timer display 
 let timer = undefined //The timer interval made global to use it on "resetTimer()" function
 let timeModes = { //The time modes object.
-    pomodoro: new TimeMode( 1500 ,'Pomodoro Session is Over!', `It's time to take a break`, 'Take a break', 'rgb(117, 18, 0)'),
-    shortBreak: new TimeMode( 300 ,'Short Break is Over!', `It's time to start working!`, 'Start pomodoro', 'rgb(0, 80, 146)'),
-    longBreak: new TimeMode( 900, 'Long Break is Over!', `It's time to start working!`, 'Start pomodoro',  'rgb(28, 99, 0)')
+    pomodoro: new TimeMode( 1500 ,'Pomodoro Session is Over!', `It's time to take a break`,  'rgb(117, 18, 0)'),
+    shortBreak: new TimeMode( 300 ,'Short Break is Over!', `It's time to start working!`,  'rgb(0, 80, 146)'),
+    longBreak: new TimeMode( 900, 'Long Break is Over!', `It's time to start working!`,  'rgb(28, 99, 0)')
 }
 let currentTimeMode = 'pomodoro'; //Current time mode
 
@@ -55,6 +53,9 @@ stops the timer and sets the timerEl's textContent to currentTimeMode
 function resetTimer() {
     clearInterval(timer)
     timerOn = false
+    shortBreakBtn.style.display = 'inline-block';
+    longBreakBtn.style.display = 'inline-block';
+    pomodoroBtn.style.display = 'inline-block';
     shortBreakBtn.style.opacity = 1;
     longBreakBtn.style.opacity = 1;
     pomodoroBtn.style.opacity = 1;
@@ -67,9 +68,11 @@ function startTimer(){
     timerOn = true
     let time = timeModes[currentTimeMode].timeInSeconds - 1
     console.log(`Time initalization: ${time}`)
-
-    //Making the start button dissapear and reset button appear
-
+    setTimeout(() => {
+        shortBreakBtn.style.display = 'none';
+        longBreakBtn.style.display = 'none';
+        pomodoroBtn.style.display = 'none';
+    }, 200)
     //Making all the selection buttons dissappear
     shortBreakBtn.style.opacity = 0;
     longBreakBtn.style.opacity = 0;
@@ -93,7 +96,7 @@ function openModal(){
     overlay.style.display = "flex"
     overlay.innerHTML = timeModes[currentTimeMode].modalElement
     
-    document.querySelector('.modal-close').addEventListener('click', () => {
+    document.querySelector(".modal").addEventListener('click', () => {
         if(currentTimeMode == 'shortBreak' || currentTimeMode == 'longBreak'){
             currentTimeMode = 'pomodoro'
         } else if (currentTimeMode == 'pomodoro'){

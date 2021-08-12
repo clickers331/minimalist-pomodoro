@@ -13,11 +13,17 @@
     :root{
         font-size:10px;
     }   
+    .modal{ 
+        width:100%;
+    }
 }
 
 @media (max-width:380px){
     :root{
         font-size:6px;
+    }
+    .modal{ 
+        width:100%;
     }
 }
 body{
@@ -125,7 +131,7 @@ button{
     padding:1rem 2rem;
     background:white;
     border-radius: 10px;
-    max-width:50%;
+    width:50%;
     button{
         font-size:1rem;
         color:tomato;
