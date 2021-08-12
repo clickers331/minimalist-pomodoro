@@ -1,0 +1,145 @@
+@import 'sass-properties/resets', 'sass-properties/colors','sass-properties/fonts';
+
+@font-face {
+    font-family: 'SFProRegular';
+    src: url('/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2') format('woff2'),
+         url('/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@media(max-width:700px){
+    :root{
+        font-size:10px;
+    }   
+}
+
+@media (max-width:380px){
+    :root{
+        font-size:6px;
+    }
+}
+body{
+    background: rgb(117, 18, 0);
+    color: $secondaryDark;
+    transition:all 500ms ease;
+    font-family:'SFProRegular', monospace, arial, helvetica;
+}
+
+button{
+    background:white;
+    color:black;
+    border:none;
+    border-radius: 10px;
+    font-size:2rem;
+    padding:.5rem 1rem;
+    opacity:1;
+    transition: all 200ms ease;
+    &:hover{
+        background:#d4d4d4;
+        opacity:1;
+    }
+}
+
+
+.content{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.container{
+    z-index: 0;
+    top:0;
+    right:0;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    padding:1rem;
+    width:100%;
+    transition: all 100ms;
+}
+
+.timer{
+    font-size:14.5rem;
+    margin: 1rem 0;
+    cursor:pointer;
+}
+
+.start-timer{
+    display:inline-block;
+    margin: 1rem 0;
+}
+.reset-timer{
+    display:none;
+    color:white;
+    margin: 1rem 0;
+    &:hover{
+        background:#d4d4d4;
+        opacity:1;
+    }
+}
+
+
+
+.mode-selector-container{
+    display:flex;
+    margin: 1rem 0;
+    width:100%;
+    justify-content: center;
+    .mode-selector{
+        padding:.5rem 1rem;
+        margin:0 .3rem;
+        color:white;
+        &.pomodoro{
+            background:rgb(117, 18, 0);
+        }
+        &.short-break{
+           background: rgb(0, 80, 146);
+        }
+        &.long-break{
+            background:rgb(28, 99, 0);
+        }
+    }  
+}
+ 
+
+.overlay{
+    z-index: 1;
+    position: fixed;
+    top:0;
+    right:0;
+    background:rgba(28, 99, 0, 0.3);
+    height:100vh;
+    width:100%;
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    text-align: center;
+    padding:1rem 2rem;
+    background:white;
+    border-radius: 10px;
+    max-width:50%;
+    button{
+        font-size:1rem;
+        color:tomato;
+    }
+    h2{
+        font-size:3rem;
+    }
+    p{
+        font-size:2rem;
+    }
+    button,h2,p{
+
+        margin:.5rem 0;
+    }
+    
+}
+

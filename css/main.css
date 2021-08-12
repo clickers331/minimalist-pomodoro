@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:export {
+  primaryDark: black;
+}
+
+@font-face {
+  font-family: 'SFProRegular';
+  src: url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2") format("woff2"), url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProRegular';
+  src: url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2") format("woff2"), url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    font-size: 6px;
+  }
+}
+
+body {
+  background: #751200;
+  color: white;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  font-family: 'SFProRegular', monospace, arial, helvetica;
+}
+
+button {
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  opacity: 1;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+button:hover {
+  background: #d4d4d4;
+  opacity: 1;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  z-index: 0;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.timer {
+  font-size: 14.5rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.start-timer {
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.reset-timer {
+  display: none;
+  color: white;
+  margin: 1rem 0;
+}
+
+.reset-timer:hover {
+  background: #d4d4d4;
+  opacity: 1;
+}
+
+.mode-selector-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mode-selector-container .mode-selector {
+  padding: .5rem 1rem;
+  margin: 0 .3rem;
+  color: white;
+}
+
+.mode-selector-container .mode-selector.pomodoro {
+  background: #751200;
+}
+
+.mode-selector-container .mode-selector.short-break {
+  background: #005092;
+}
+
+.mode-selector-container .mode-selector.long-break {
+  background: #1c6300;
+}
+
+.overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(28, 99, 0, 0.3);
+  height: 100vh;
+  width: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.modal button {
+  font-size: 1rem;
+  color: tomato;
+}
+
+.modal h2 {
+  font-size: 3rem;
+}
+
+.modal p {
+  font-size: 2rem;
+}
+
+.modal button, .modal h2, .modal p {
+  margin: .5rem 0;
+}
+/*# sourceMappingURL=main.css.map */
