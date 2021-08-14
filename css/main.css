@@ -284,7 +284,7 @@ button:hover {
   position: fixed;
   top: 0;
   right: 0;
-  background: rgba(28, 99, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   height: 100vh;
   width: 100%;
   display: none;
@@ -302,11 +302,7 @@ button:hover {
   background: white;
   border-radius: 10px;
   width: 50%;
-}
-
-.modal button {
-  font-size: 1rem;
-  color: tomato;
+  cursor: pointer;
 }
 
 .modal h2 {
@@ -317,7 +313,7 @@ button:hover {
   font-size: 2rem;
 }
 
-.modal button, .modal h2, .modal p {
+.modal h2, .modal p {
   margin: .5rem 0;
 }
 
