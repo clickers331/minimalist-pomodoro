@@ -43,7 +43,8 @@ const timerEl = document.querySelector('.timer') //Timer display
 const timeModes = { //The time modes object containing, you guessed it, time modes.
 	pomodoro: new TimeMode(1500, 'Pomodoro Session is Over!', `It's time to take a break`, '#e03a3c'),
 	shortBreak: new TimeMode(300, 'Short Break is Over!', `It's time to start working!`, '#009ddc'),
-	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, '#62bb47')
+	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, '#62bb47'),
+	test: new TimeMode(5, 'Test is Over!', `Hope it worked!`, '#333333')
 }
 let timer = undefined //Timer interval that is set globally because it is being used in the resetTimer() function
 let currentTimeMode = 'pomodoro'; //Current time mode (pomodoro by default)
@@ -135,3 +136,8 @@ longBreakBtn.addEventListener('click', () => {
 	currentTimeMode = 'longBreak' //Set the current time mode to "longBreak"
 	resetTimer() //Reset the timer to apply the changes
 })
+
+function test(){
+	currentTimeMode = 'test';
+	resetTimer()
+}
