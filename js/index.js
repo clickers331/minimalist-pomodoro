@@ -96,6 +96,7 @@ function openModal() {
 	overlay.style.display = "flex"
 	overlay.innerHTML = timeModes[currentTimeMode].modalElement
 	finishSound.play();
+	resetTimer();
 	document.querySelector(".modal").addEventListener('click', () => {
 		if (currentTimeMode == 'shortBreak' || currentTimeMode == 'longBreak') {
 			currentTimeMode = 'pomodoro'
