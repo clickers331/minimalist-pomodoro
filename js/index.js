@@ -41,16 +41,16 @@ const overlay = document.querySelector('.overlay') //Overlay of the modal
 
 const timerEl = document.querySelector('.timer') //Timer display 
 const timeModes = { //The time modes object containing, you guessed it, time modes.
-	pomodoro: new TimeMode(1500, 'Pomodoro Session is Over!', `It's time to take a break`, 'rgb(117, 18, 0)'),
-	shortBreak: new TimeMode(300, 'Short Break is Over!', `It's time to start working!`, 'rgb(0, 80, 146)'),
-	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, 'rgb(28, 99, 0)')
+	pomodoro: new TimeMode(1500, 'Pomodoro Session is Over!', `It's time to take a break`, '#e03a3c'),
+	shortBreak: new TimeMode(300, 'Short Break is Over!', `It's time to start working!`, '#009ddc'),
+	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, '#62bb47')
 }
 let timer = undefined //Timer interval that is set globally because it is being used in the resetTimer() function
 let currentTimeMode = 'pomodoro'; //Current time mode (pomodoro by default)
 let timerOn = false; //timerOn boolean that triggers when the timer starts
 
 // resetTimer() function that:
-function resetTimer() {
+function resetTimer() { 
 	clearInterval(timer) //Stops the interval timer
 	timerOn = false //Sets the timerOn to false (since the timer is stopped)
 

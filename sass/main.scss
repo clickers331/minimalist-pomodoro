@@ -6,37 +6,12 @@
 
 @import 'sass-properties/resets', 'sass-properties/colors','sass-properties/fonts';
 
-@font-face {
-    font-family: 'SFProRegular';
-    src: url('/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2') format('woff2'),
-         url('/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@media(max-width:700px){
-    :root{
-        font-size:10px;
-    }   
-    .modal{ 
-        width:100%;
-    }
-}
-
-@media (max-width:380px){
-    :root{
-        font-size:6px;
-    }
-    .modal{ 
-        width:100%;
-    }
-}
 body{
     background: rgb(117, 18, 0);
     color: $secondaryDark;
     transition:all 500ms ease;
-    font-family:'SFProRegular', monospace, arial, helvetica;
+    font-family:'SFProDisplay',monospace, arial, helvetica;
+    font-weight: 200;
 }
 
 button{
@@ -51,6 +26,7 @@ button{
     &:hover{
         background:#d4d4d4;
         opacity:1;
+        cursor:pointer;
     }
 }
 
@@ -111,13 +87,13 @@ button{
         margin:0 .3rem;
         color:white;
         &.pomodoro{
-            background:rgb(117, 18, 0);
+            background:#e03a3c;
         }
         &.short-break{
-           background: rgb(0, 80, 146);
+           background: #009ddc;
         }
         &.long-break{
-            background:rgb(28, 99, 0);
+            background:#62bb47;
         }
     }  
 }
@@ -159,3 +135,21 @@ button{
     
 }
 
+/* Media Queries*/
+@media(max-width:700px){
+    :root{
+        font-size:10px;
+    }   
+    .modal{ 
+        width:100%;
+    }
+}
+
+@media (max-width:380px){
+    :root{
+        font-size:6px;
+    }
+    .modal{ 
+        width:100%;
+    }
+}

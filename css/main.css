@@ -15,35 +15,147 @@
 }
 
 @font-face {
-  font-family: 'SFProRegular';
-  src: url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2") format("woff2"), url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-BlackItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: 'SFProRegular';
-  src: url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff2") format("woff2"), url("/fonts/SFDisplay/specimen_files/fontsfree-net-sfprodisplay-regular-webfont.woff") format("woff");
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Black.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Bold.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-BoldItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Heavy.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-HeavyItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Light.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-LightItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Medium.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-MediumItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Regular.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-@media (max-width: 700px) {
-  :root {
-    font-size: 10px;
-  }
-  .modal {
-    width: 100%;
-  }
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-RegularItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-RegularItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
-@media (max-width: 380px) {
-  :root {
-    font-size: 6px;
-  }
-  .modal {
-    width: 100%;
-  }
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Semibold.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-SemiboldItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-SemiboldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Thin.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-ThinItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-Ultralight.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-Ultralight.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url("/fonts/SFDisplay/SFProDisplay-UltralightItalic.woff2") format("woff2"), url("/fonts/SFDisplay/SFProDisplay-UltralightItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
 }
 
 body {
@@ -51,7 +163,8 @@ body {
   color: white;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
-  font-family: 'SFProRegular', monospace, arial, helvetica;
+  font-family: 'SFProDisplay',monospace, arial, helvetica;
+  font-weight: 200;
 }
 
 button {
@@ -69,6 +182,7 @@ button {
 button:hover {
   background: #d4d4d4;
   opacity: 1;
+  cursor: pointer;
 }
 
 .content {
@@ -154,15 +268,15 @@ button:hover {
 }
 
 .mode-selector-container .mode-selector.pomodoro {
-  background: #751200;
+  background: #e03a3c;
 }
 
 .mode-selector-container .mode-selector.short-break {
-  background: #005092;
+  background: #009ddc;
 }
 
 .mode-selector-container .mode-selector.long-break {
-  background: #1c6300;
+  background: #62bb47;
 }
 
 .overlay {
@@ -205,5 +319,24 @@ button:hover {
 
 .modal button, .modal h2, .modal p {
   margin: .5rem 0;
+}
+
+/* Media Queries*/
+@media (max-width: 700px) {
+  :root {
+    font-size: 10px;
+  }
+  .modal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    font-size: 6px;
+  }
+  .modal {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
