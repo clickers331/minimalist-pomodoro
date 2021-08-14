@@ -1,6 +1,13 @@
+/*
+* TODO: 
+* [ ] Make all the colors imported from the colors module
+* [ ] Set all the color properties to imported colors from the colors module
+*/
 * {
   margin: 0;
   padding: 0;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 
 :export {
@@ -25,11 +32,17 @@
   :root {
     font-size: 10px;
   }
+  .modal {
+    width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
   :root {
     font-size: 6px;
+  }
+  .modal {
+    width: 100%;
   }
 }
 
@@ -101,6 +114,10 @@ button:hover {
   cursor: pointer;
 }
 
+.timer:hover {
+  color: #b3b3b3;
+}
+
 .start-timer {
   display: inline-block;
   margin: 1rem 0;
@@ -126,6 +143,8 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
 }
 
 .mode-selector-container .mode-selector {
@@ -168,7 +187,7 @@ button:hover {
   padding: 1rem 2rem;
   background: white;
   border-radius: 10px;
-  max-width: 50%;
+  width: 50%;
 }
 
 .modal button {

@@ -1,3 +1,9 @@
+/*
+* TODO: 
+* [ ] Make all the colors imported from the colors module
+* [ ] Set all the color properties to imported colors from the colors module
+*/
+
 @import 'sass-properties/resets', 'sass-properties/colors','sass-properties/fonts';
 
 @font-face {
@@ -73,6 +79,9 @@ button{
     font-size:14.5rem;
     margin: 1rem 0;
     cursor:pointer;
+    &:hover{
+        color:darken(white,30%)
+    }
 }
 
 .start-timer{
@@ -96,6 +105,7 @@ button{
     margin: 1rem 0;
     width:100%;
     justify-content: center;
+    transition:all 200ms;
     .mode-selector{
         padding:.5rem 1rem;
         margin:0 .3rem;
