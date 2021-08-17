@@ -7,16 +7,14 @@
 @import 'sass-properties/resets', 'sass-properties/colors';
 
 body{
-    background: rgb(117, 18, 0);
-    color: $secondaryDark;
+    color: $primaryText;
     transition:all 500ms ease;
     font-family:'SFProDisplay',monospace, arial, helvetica;
     font-weight: 200;
 }
 
 button{
-    background:white;
-    color:black;
+    color:$primaryText;
     border:none;
     border-radius: 10px;
     font-size:2rem;
@@ -24,7 +22,6 @@ button{
     opacity:1;
     transition: all 200ms ease;
     &:hover{
-        background:#d4d4d4;
         opacity:1;
         cursor:pointer;
     }
@@ -56,25 +53,14 @@ button{
     margin: 1rem 0;
     cursor:pointer;
     &:hover{
-        color:darken(white,30%)
+        color:darken($primaryText,30%)
     }
 }
 
-.start-timer{
-    display:inline-block;
-    margin: 1rem 0;
+.timer-container{
+    display:flex;
+    justify-content:space-between;
 }
-.reset-timer{
-    display:none;
-    color:white;
-    margin: 1rem 0;
-    &:hover{
-        background:#d4d4d4;
-        opacity:1;
-    }
-}
-
-
 
 .mode-selector-container{
     display:flex;
@@ -97,7 +83,7 @@ button{
         }
     }  
 }
- 
+
 
 .overlay{
     z-index: 1;

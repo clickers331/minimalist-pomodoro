@@ -42,19 +42,20 @@ const overlay = document.querySelector('.overlay') //Overlay of the modal
 const timerEl = document.querySelector('.timer') //Timer display 
 const timeModes = { //The time modes object containing, you guessed it, time modes.
 	pomodoro: new TimeMode(1500, 'Pomodoro Session is Over!', `It's time to take a break`, '#e03a3c'),
-	shortBreak: new TimeMode(300, 'Short Break is Over!', `It's time to start working!`, '#009ddc'),
-	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, '#62bb47'),
+	shortBreak: new TimeMode(900, 'Short Break is Over!', `It's time to start working!`, '#009ddc'),
+	longBreak: new TimeMode(300, 'Long Break is Over!', `It's time to start working!`, '#62bb47'),
 	test: new TimeMode(5, 'Test is Over!', `Hope it worked!`, '#333333')
 }
+let time = 0;
 let timer = undefined //Timer interval that is set globally because it is being used in the resetTimer() function
 let currentTimeMode = 'pomodoro'; //Current time mode (pomodoro by default)
-let timerOn = false; //timerOn boolean that triggers when the timer starts
+
+let isPaused = false
 
 // resetTimer() function that:
 function resetTimer() { 
 	clearInterval(timer) //Stops the interval timer
-	timerOn = false //Sets the timerOn to false (since the timer is stopped)
-
+	timer = undefined;
 	//Making option buttons reappear
 	modeSelector.style.display = "flex"
 	modeSelector.style.opacity = 1;
@@ -66,9 +67,8 @@ function resetTimer() {
 
 //startTimer() function that:
 function startTimer() {
-	timerOn = true //Sets the timerOn to true
-	let time = timeModes[currentTimeMode].timeInSeconds - 1 //Initializes the time variable to be set to one less of the current time modes timeInSeconds variable since the interval has a first delay
-	console.log(`Time initalization: ${time}`)
+
+	time = timeModes[currentTimeMode].timeInSeconds - 1 //Initializes the time variable to be set to one less of the current time modes timeInSeconds variable since the interval has a first delay
 	//Makes options dissappear after
 	setTimeout(() => {
 		modeSelector.style.display = 'none'
@@ -78,7 +78,6 @@ function startTimer() {
 
 	//Start the timer
 	timer = setInterval(() => {
-		console.log(`Time changed` + time)
 		timerEl.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
 		title.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
 		if (time + 1 == 0) {
@@ -88,6 +87,23 @@ function startTimer() {
 	}, 1000)
 }
 
+function pauseTimer(){
+	clearInterval(timer)
+	isPaused = true
+}
+
+function unpauseTimer(){
+	timer = setInterval(() => {
+		console.log(`Time changed` + time)
+		timerEl.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
+		title.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
+		if (time + 1 == 0) {
+			openModal()
+		}
+		time--;
+	}, 1000)
+	isPaused = false;
+}
 /*
  * "openModal()" function that:
  * - Makes the overlay appear
@@ -112,13 +128,20 @@ function openModal() {
 resetTimer(); //Reset everything to get a starting point
 
 //Add an event listener to the start button
-timerEl.addEventListener('click', () => {
-	if (!timerOn) {
+timerEl.addEventListener('mouseup', (event) => {
+	if(!timer && event.button == 0){
 		startTimer();
-	} else {
+	} else if (timer && !isPaused && event.button == 0){
+		pauseTimer();
+	} else if (timer && isPaused && event.button == 0){
+		unpauseTimer();
+	} else if(timer && event.button == 1){
 		resetTimer();
-	}
+	}			
 })
+
+
+
 
 
 //When the pomodoroBtn (selecting the pomodoro mode) is clicked, It is going to set the "currentTimeMode" to 0 (25:00 in timeModes object which is the pomodoro time) and reset the timer
@@ -137,6 +160,7 @@ longBreakBtn.addEventListener('click', () => {
 	resetTimer() //Reset the timer to apply the changes
 })
 
+//( ͡❛ ͜ʖ ͡❛)
 function test(){
 	currentTimeMode = 'test';
 	resetTimer()

@@ -10,12 +10,7 @@
   transition: all 200ms ease;
 }
 
-:export {
-  primaryDark: black;
-}
-
 body {
-  background: #751200;
   color: white;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -24,8 +19,7 @@ body {
 }
 
 button {
-  background: white;
-  color: black;
+  color: white;
   border: none;
   border-radius: 10px;
   font-size: 2rem;
@@ -36,7 +30,6 @@ button {
 }
 
 button:hover {
-  background: #d4d4d4;
   opacity: 1;
   cursor: pointer;
 }
@@ -88,20 +81,13 @@ button:hover {
   color: #b3b3b3;
 }
 
-.start-timer {
-  display: inline-block;
-  margin: 1rem 0;
-}
-
-.reset-timer {
-  display: none;
-  color: white;
-  margin: 1rem 0;
-}
-
-.reset-timer:hover {
-  background: #d4d4d4;
-  opacity: 1;
+.timer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .mode-selector-container {
