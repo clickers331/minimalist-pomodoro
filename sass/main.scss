@@ -48,19 +48,7 @@ button{
     transition: all 100ms;
 }
 
-.timer{
-    font-size:14.5rem;
-    margin: 1rem 0;
-    cursor:pointer;
-    &:hover{
-        color:darken($primaryText,30%)
-    }
-}
 
-.timer-container{
-    display:flex;
-    justify-content:space-between;
-}
 
 .mode-selector-container{
     display:flex;
@@ -73,20 +61,37 @@ button{
         margin:0 .3rem;
         color:white;
         &.pomodoro{
-            background:#e03a3c;
+            background: $pomodoroColor;
         }
-        &.short-break{
-           background: #009ddc;
-        }
-        &.long-break{
-            background:#62bb47;
+        &.break{
+           background: $breakColor;
         }
     }  
 }
 
+.timer{
+    font-size:14.5rem;
+    margin: 1rem 0;
+    cursor:pointer;
+    &:hover{
+        color:darken($primaryText,30%)
+    }
+}
+
+.timer-container{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    width: 90%;
+}
+
 .time-ctrl-btn{
     background-color:inherit;
-    color:black;
+    color:white;
+    transform: scale(1);
+    &:hover{
+        transform: scale(1.2)
+    }
 }
 
 .overlay{
