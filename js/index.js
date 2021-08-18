@@ -31,12 +31,11 @@ const body = document.querySelector('body') //The body element
 const title = document.querySelector('title') //The title element
 
 const pomodoroBtn = document.querySelector('.pomodoro') //The pomodoro button
-const shortBreakBtn = document.querySelector('.short-break') //The short break button
-const longBreakBtn = document.querySelector('.long-break') //The long break button
-const modeSelector = document.querySelector('.mode-selector-container') //The mode selector
+const breakBtn = document.querySelector('.break') //The short break button
+const modeSelector = document.querySelector('.mode-selector-container')
 
-const increaseTimeBtn = document.getElementById("up")
-const decreaseTimeBtn = document.getElementById("down")
+const increaseTimeBtn = document.getElementById("increase-time")
+const decreaseTimeBtn = document.getElementById("decrease-time")
 
 const finishSound = new Audio('audio/sound.mp3'); //Sound to be played when session ends
 
@@ -45,8 +44,7 @@ const overlay = document.querySelector('.overlay') //Overlay of the modal
 const timerEl = document.querySelector('.timer') //Timer display 
 const timeModes = { //The time modes object containing, you guessed it, time modes.
 	pomodoro: new TimeMode(1500, 'Pomodoro Session is Over!', `It's time to take a break`, '#e03a3c'),
-	shortBreak: new TimeMode(300, 'Short Break is Over!', `It's time to start working!`, '#009ddc'),
-	longBreak: new TimeMode(900, 'Long Break is Over!', `It's time to start working!`, '#62bb47'),
+	break: new TimeMode(300, 'Break is Over!', `It's time to start working!`, '#009ddc'),
 	test: new TimeMode(5, 'Test is Over!', `Hope it worked!`, '#333333')
 }
 let time = 0;
@@ -59,7 +57,8 @@ function resetTimer() {
 	timer = undefined;
 	//Making option buttons reappear
 	modeSelector.style.display = "flex"
-	modeSelector.style.opacity = 1;
+	setTimeout(() => {modeSelector.style.opacity = 1;},100)
+	
 
 	body.style.background = timeModes[currentTimeMode].themeColor //Setting the background color to the current times theme color
 	title.textContent = `Time left: ${Math.floor(timeModes[currentTimeMode].timeInSeconds / 60)}:${timeModes[currentTimeMode].timeInSeconds % 60 < 10 ? '0' + timeModes[currentTimeMode].timeInSeconds % 10 : timeModes[currentTimeMode].timeInSeconds % 10}` //Sets the title to the display so the user is able to see time left from tab data
@@ -98,10 +97,10 @@ function openModal() {
 	finishSound.play();
 	resetTimer();
 	document.querySelector(".modal").addEventListener('click', () => {
-		if (currentTimeMode == 'shortBreak' || currentTimeMode == 'longBreak') {
+		if (currentTimeMode == 'break') {
 			currentTimeMode = 'pomodoro'
 		} else if (currentTimeMode == 'pomodoro') {
-			currentTimeMode = 'shortBreak'
+			currentTimeMode = 'break'
 		}
 		overlay.style.display = "none"; //Close the modal
 		resetTimer(); //resetTimer
@@ -141,15 +140,12 @@ pomodoroBtn.addEventListener('click', () => {
 	resetTimer();
 })
 //When the shortBreakBtn (selecting the short break mode) is clicked:
-shortBreakBtn.addEventListener('click', () => {
-	currentTimeMode = 'shortBreak'; //It is going to set the "currentTimeMode" to 1 (5:00 in timeModes object which is the short break mode)
+breakBtn.addEventListener('click', () => {
+	currentTimeMode = 'break'; //It is going to set the "currentTimeMode" to 1 (5:00 in timeModes object which is the short break mode)
 	resetTimer(); //and reset the timer
 });
 //When the longBreakBtn (selecting the long break mode) is clicked:
-longBreakBtn.addEventListener('click', () => {
-	currentTimeMode = 'longBreak' //Set the current time mode to "longBreak"
-	resetTimer() //Reset the timer to apply the changes
-})
+
 
 //( ͡❛ ͜ʖ ͡❛)
 function test(){
