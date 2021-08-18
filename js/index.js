@@ -35,6 +35,9 @@ const shortBreakBtn = document.querySelector('.short-break') //The short break b
 const longBreakBtn = document.querySelector('.long-break') //The long break button
 const modeSelector = document.querySelector('.mode-selector-container') //The mode selector
 
+const increaseTimeBtn = document.getElementById("up")
+const decreaseTimeBtn = document.getElementById("down")
+
 const finishSound = new Audio('audio/sound.mp3'); //Sound to be played when session ends
 
 const overlay = document.querySelector('.overlay') //Overlay of the modal
@@ -49,8 +52,6 @@ const timeModes = { //The time modes object containing, you guessed it, time mod
 let time = 0;
 let timer = undefined //Timer interval that is set globally because it is being used in the resetTimer() function
 let currentTimeMode = 'pomodoro'; //Current time mode (pomodoro by default)
-
-let isPaused = false
 
 // resetTimer() function that:
 function resetTimer() { 
@@ -86,24 +87,6 @@ function startTimer() {
 		time--;
 	}, 1000)
 }
-
-function pauseTimer(){
-	clearInterval(timer)
-	isPaused = true
-}
-
-function unpauseTimer(){
-	timer = setInterval(() => {
-		console.log(`Time changed` + time)
-		timerEl.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
-		title.textContent = `${Math.floor(time / 60)}:${time % 60 < 10 ?  `0${time % 60}` : time % 60}`
-		if (time + 1 == 0) {
-			openModal()
-		}
-		time--;
-	}, 1000)
-	isPaused = false;
-}
 /*
  * "openModal()" function that:
  * - Makes the overlay appear
@@ -128,21 +111,27 @@ function openModal() {
 resetTimer(); //Reset everything to get a starting point
 
 //Add an event listener to the start button
-timerEl.addEventListener('mouseup', (event) => {
-	if(!timer && event.button == 0){
+timerEl.addEventListener('click', () => {
+	if(timer == undefined){
+		//Start timer
 		startTimer();
-	} else if (timer && !isPaused && event.button == 0){
-		pauseTimer();
-	} else if (timer && isPaused && event.button == 0){
-		unpauseTimer();
-	} else if(timer && event.button == 1){
+		console.log('Timer Started`')
+	} else {
+		//Reset timer
 		resetTimer();
-	}			
+		console.log('Timer Resetted')
+	}	
 })
 
 
 
+increaseTimeBtn.addEventListener('click', () => {
+	console.log('increased')
+})
 
+decreaseTimeBtn.addEventListener('click', () => {
+	console.log('decreased')
+})
 
 //When the pomodoroBtn (selecting the pomodoro mode) is clicked, It is going to set the "currentTimeMode" to 0 (25:00 in timeModes object which is the pomodoro time) and reset the timer
 pomodoroBtn.addEventListener('click', () => {
