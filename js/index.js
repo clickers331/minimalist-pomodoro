@@ -126,11 +126,13 @@ timerEl.addEventListener('click', () => {
 
 
 increaseTimeBtn.addEventListener('click', () => {
-	console.log('increased')
+	if(timeModes[currentTimeMode].timeInSeconds < 3600)timeModes[currentTimeMode].timeInSeconds = timeModes[currentTimeMode].timeInSeconds + 300;
+	resetTimer();
 })
 
 decreaseTimeBtn.addEventListener('click', () => {
-	console.log('decreased')
+	if (timeModes[currentTimeMode].timeInSeconds > 300) timeModes[currentTimeMode].timeInSeconds -= 300;
+	resetTimer()
 })
 
 //When the pomodoroBtn (selecting the pomodoro mode) is clicked, It is going to set the "currentTimeMode" to 0 (25:00 in timeModes object which is the pomodoro time) and reset the timer
