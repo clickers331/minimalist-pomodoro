@@ -66,6 +66,10 @@ button{
         &.break{
            background: $breakColor;
         }
+        
+        &:hover{
+            transform: scale(1.05)
+        }
     }  
 }
 
@@ -74,7 +78,7 @@ button{
     margin: 1rem 0;
     cursor:pointer;
     &:hover{
-        color:darken($primaryText,30%)
+        transform:scale(1.05)
     }
 }
 

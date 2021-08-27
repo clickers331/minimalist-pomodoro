@@ -98,6 +98,11 @@ button:hover {
   background: #009ddc;
 }
 
+.mode-selector-container .mode-selector:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .timer {
   font-size: 14.5rem;
   margin: 1rem 0;
@@ -105,7 +110,8 @@ button:hover {
 }
 
 .timer:hover {
-  color: #b3b3b3;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .timer-container {
