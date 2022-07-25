@@ -4,195 +4,208 @@
 * [x] Set all the color properties to imported colors from the colors module
 */
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
 }
 
 body {
-  color: white;
-  -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
-  font-family: 'SFProDisplay',monospace, arial, helvetica;
-  font-weight: 200;
+    color: white;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    font-family: "SFProDisplay", monospace, arial, helvetica;
+    font-weight: 200;
 }
 
 button {
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 2rem;
-  padding: .5rem 1rem;
-  opacity: 1;
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    opacity: 1;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
 }
 
 button:hover {
-  opacity: 1;
-  cursor: pointer;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .content {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .container {
-  z-index: 0;
-  top: 0;
-  right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 1rem;
-  width: 100%;
-  -webkit-transition: all 100ms;
-  transition: all 100ms;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    -webkit-transition: all 100ms;
+    transition: all 100ms;
+    position: relative;
 }
 
 .mode-selector-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 1rem 0;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+    top: -2em;
+    position: absolute;
 }
 
 .mode-selector-container .mode-selector {
-  padding: .5rem 1rem;
-  margin: 0 .3rem;
-  color: white;
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    color: white;
 }
 
 .mode-selector-container .mode-selector.pomodoro {
-  background: #e03a3c;
+    background: #e03a3c;
 }
 
 .mode-selector-container .mode-selector.break {
-  background: #009ddc;
+    background: #009ddc;
 }
 
 .mode-selector-container .mode-selector:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .timer {
-  font-size: 14.5rem;
-  margin: 1rem 0;
-  cursor: pointer;
+    font-size: 14.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
 }
 
 .timer:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .timer-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 90%;
 }
 
 .time-ctrl-btn {
-  background-color: inherit;
-  color: white;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+    background-color: inherit;
+    color: white;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    width: 100%;
 }
 
 .time-ctrl-btn:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: black solid 2px;
+    width: 100%;
 }
 
 .overlay {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.3);
-  height: 100vh;
-  width: 100%;
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .modal {
-  text-align: center;
-  padding: 1rem 2rem;
-  background: white;
-  border-radius: 10px;
-  width: 50%;
-  cursor: pointer;
+    text-align: center;
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 10px;
+    width: 50%;
+    cursor: pointer;
 }
 
 .modal h2 {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .modal p {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
-.modal h2, .modal p {
-  margin: .5rem 0;
+.modal h2,
+.modal p {
+    margin: 0.5rem 0;
 }
 
 /* Media Queries*/
 @media (max-width: 700px) {
-  :root {
-    font-size: 10px;
-  }
-  .modal {
-    width: 100%;
-  }
+    :root {
+        font-size: 10px;
+    }
+    .modal {
+        width: 100%;
+    }
 }
 
 @media (max-width: 380px) {
-  :root {
-    font-size: 6px;
-  }
-  .modal {
-    width: 100%;
-  }
+    :root {
+        font-size: 6px;
+    }
+    .modal {
+        width: 100%;
+    }
 }
 /*# sourceMappingURL=main.css.map */
